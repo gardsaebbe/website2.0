@@ -1,4 +1,5 @@
 ---
+// InfoPage.astro
 import H1 from "../components/h1.astro";
 import InfoLayout from "../layouts/InfoLayout.astro";
 import Gallery from "../components/gallery";
@@ -68,49 +69,8 @@ const images = [
       for foto. Her er noen bilder fra konserter og sosiale sammenkomster med
       mine venner :)
     </p>
-    <Gallery images={images} client:load />
+
+    <!-- Viktig: bruker client:only for å unngå duplikat -->
+    <Gallery images={images} client:only="react" />
   </div>
 </InfoLayout>
-
-<style>
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    max-width: 900px;
-    margin: 20px auto;
-  }
-  .gallery img {
-    width: 100%;
-    border-radius: 8px;
-    transition: transform 0.2s;
-    cursor: pointer;
-  }
-  .gallery img:hover {
-    transform: scale(1.05);
-  }
-  .caption {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #555;
-    margin-top: 5px;
-  }
-</style>
-
-<h1>Bildegalleri</h1>
-<p>
-  I sommer kjøpte jeg et analog-kamera, som har resultert i en stor interesse
-  for foto. Her er noen bilder fra konserter og sosiale sammenkomster med venner
-  :)
-</p>
-
-<div class="gallery">
-  {
-    images.map((bilde) => (
-      <div>
-        <img src={bilde.src} alt={bilde.caption} />
-        <div class="caption">{bilde.caption}</div>
-      </div>
-    ))
-  }
-</div>

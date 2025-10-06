@@ -8,4 +8,7 @@ export default defineConfig({
   integrations: [react()],
   site: 'https://gardsaebbe.github.io',
   base: '/website2.0',
+  vite: {
+        plugins: [tailwindcss()],
+      },
 });
