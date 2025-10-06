@@ -5,67 +5,57 @@ import RootLayout from "../layouts/RootLayout.astro";
 ---
 
 <RootLayout>
-  <main>
+  <main class="relative w-full min-h-screen overflow-hidden">
+    <!-- Bakgrunnsbilder -->
+    <div class="absolute inset-0 -z-10 flex flex-col">
+      {
+        Array(5)
+          .fill(0)
+          .map(() => (
+            <img
+              src="website2.0/background.svg"
+              alt="background"
+              class="w-full h-1/5 object-cover"
+            />
+          ))
+      }
+    </div>
+
+    <!-- Innhold -->
     <div
-      class="group relative w-full min-h-dvh flex items-center justify-center"
+      class="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-12 text-center"
     >
-      <div class="absolute w-full h-dvh -z-10 flex flex-col">
-        <img
-          src="/website/background.svg"
-          alt="background"
-          class="w-full h-1/5 object-cover bg-img"
-        />
-        <img
-          src="/website/background.svg"
-          alt="background"
-          class="w-full h-1/5 object-cover bg-img"
-        />
-        <img
-          src="/website/background.svg"
-          alt="background"
-          class="w-full h-1/5 object-cover bg-img"
-        />
-        <img
-          src="/website/background.svg"
-          alt="background"
-          class="w-full h-1/5 object-cover bg-img"
-        />
-        <img
-          src="/website/background.svg"
-          alt="background"
-          class="w-full h-1/5 object-cover bg-img"
-        />
-      </div>
-
-      <div
-        class="p-4 sm:p-8 absolute w-full h-dvh flex flex-col items-center justify-center z-10"
+      <!-- Navn -->
+      <H1
+        className="text-4xl sm:text-6xl font-bold mb-6 text-white drop-shadow-lg"
       >
-        <div class="flex items-center gap-4 mb-4">
-          <H1>Gard Sæbbe</H1>
-        </div>
+        Gard Sæbbe
+      </H1>
 
-        <div class="mb-6">
-          <img src="/website/me.jpg" alt="pic_of_me" class="w-62" />
-        </div>
+      <!-- Profilbilde -->
+      <img
+        src="website2.0/me.jpg"
+        alt="Gard Sæbbe"
+        class="w-48 sm:w-64 rounded-full border-4 border-white mb-6 shadow-lg object-cover"
+      />
 
-        <div class="flex items-center gap-4 mb-6">
-          <h3 class="text-white text-center">
-            Jeg er en kreativ og lærelysten 25-åring fra Bergen med interessere
-            for for programmering, musikk, aktivitet, kultur og nye
-            utfordringer.
-          </h3>
-        </div>
+      <!-- Introduksjonstekst -->
+      <p
+        class="text-white text-lg sm:text-xl max-w-2xl mb-8 px-4 sm:px-0 leading-relaxed"
+      >
+        Jeg er en kreativ og lærelysten 25-åring fra Bergen med interesser for
+        programmering, musikk, aktivitet, kultur og nye utfordringer.
+      </p>
 
-        <div>
-          <div class="mb-2 sm:mb-4 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-              <Link href="/about" variant="secondary">CV</Link>
-              <Link href="/photo-gallery" variant="secondary">Fotogalleri</Link>
-              <Link href="/video-gallery" variant="secondary">Videogalleri</Link
-              >
-            </div>
-          </div>
-        </div>
+      <!-- Lenker -->
+      <div class="flex flex-wrap justify-center gap-4">
+        <Link href="website2.0/about" variant="secondary">CV</Link>
+        <Link href="website2.0/photo-gallery" variant="secondary"
+          >Fotogalleri</Link
+        >
+        <Link href="website2.0/video-gallery" variant="secondary"
+          >Videogalleri</Link
+        >
       </div>
     </div>
   </main>
