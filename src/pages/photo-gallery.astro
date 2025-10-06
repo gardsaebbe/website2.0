@@ -5,57 +5,57 @@ import Gallery from "../components/gallery";
 
 const images = [
   {
-    src: "website2.0/1.jpg",
+    src: "/website2.0/1.jpg",
     alt: "Bilde 1",
     caption: "Hvitmalt Gjerde på Dragefjellet Minifestival 02.08.2025",
   },
   {
-    src: "website2.0/8.jpg",
+    src: "/website2.0/8.jpg",
     alt: "Bilde 8",
     caption: "Superføkk på Dragefjellet Minifestival 02.08.2025",
   },
   {
-    src: "website2.0/2.jpg",
+    src: "/website2.0/2.jpg",
     alt: "Bilde 2",
     caption: "Venner på Dragefjellet Minifestival 02.08.2025 :-)",
   },
   {
-    src: "website2.0/3.jpg",
+    src: "/website2.0/3.jpg",
     alt: "Bilde 3",
     caption: "Bare Folk på Landmark 04.07.2025",
   },
   {
-    src: "website2.0/4.jpg",
+    src: "/website2.0/4.jpg",
     alt: "Bilde 4",
     caption: "Orlando: ollie på fløen sommer 2025",
   },
   {
-    src: "website2.0/5.jpg",
+    src: "/website2.0/5.jpg",
     alt: "Bilde 5",
     caption: "En dårlig parkert bil på Nordnes :O",
   },
   {
-    src: "website2.0/9.jpg",
+    src: "/website2.0/9.jpg",
     alt: "Bilde 9",
     caption: "ASININ, Oslo, juni 2025",
   },
   {
-    src: "website2.0/7.jpg",
+    src: "/website2.0/7.jpg",
     alt: "Bilde 7",
     caption: "Hvitmalt Gjerde på Rommet 19.09.2025",
   },
   {
-    src: "website2.0/11.jpg",
+    src: "/website2.0/11.jpg",
     alt: "Bilde 11",
     caption: "Hvitmalt Gjerde på Rommet 19.09.2025",
   },
   {
-    src: "website2.0/10.jpg",
+    src: "/website2.0/10.jpg",
     alt: "Bilde 10",
     caption: "Shament, København sommer 2025",
   },
-  { src: "website2.0/12.jpg", alt: "Bilde 12", caption: "Skate våren 2024" },
-  { src: "website2.0/13.jpg", alt: "Bilde 13", caption: "Skate høsten 2024" },
+  { src: "/website2.0/12.jpg", alt: "Bilde 12", caption: "Skate våren 2024" },
+  { src: "/website2.0/13.jpg", alt: "Bilde 13", caption: "Skate høsten 2024" },
 ];
 ---
 
@@ -71,3 +71,46 @@ const images = [
     <Gallery images={images} client:load />
   </div>
 </InfoLayout>
+
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+  }
+  .gallery img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  .caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+  }
+</style>
+
+<h1>Bildegalleri</h1>
+<p>
+  I sommer kjøpte jeg et analog-kamera, som har resultert i en stor interesse
+  for foto. Her er noen bilder fra konserter og sosiale sammenkomster med venner
+  :)
+</p>
+
+<div class="gallery">
+  {
+    images.map((bilde) => (
+      <div>
+        <img src={bilde.src} alt={bilde.caption} />
+        <div class="caption">{bilde.caption}</div>
+      </div>
+    ))
+  }
+</div>

@@ -21,8 +21,10 @@ const defaultDescription = "Dette er Gard sin webside :-)";
     <meta property="og:description" content={defaultDescription} />
     <meta property="og:image" content="/social-image.jpg" />
   </head>
-  <body class="font-sans min-h-screen bg-zinc-900">
-    <slot />
+  <body class="font-sans w-full h-full bg-gray-900 m-0">
+    <div class="relative w-full h-full">
+      <slot />
+    </div>
   </body>
 </html>
 
