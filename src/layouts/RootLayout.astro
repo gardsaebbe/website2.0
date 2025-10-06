@@ -1,0 +1,36 @@
+---
+import "../styles/global.css";
+
+const { title, description } = Astro.props;
+
+const defaultTitle = "Gard Sæbbe";
+const defaultDescription = "Dette er Gard sin webside :-)";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ?? defaultTitle}</title>
+    <meta name="description" content={description ?? defaultDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={defaultTitle} />
+    <meta property="og:description" content={defaultDescription} />
+    <meta property="og:image" content="/social-image.jpg" />
+  </head>
+  <body class="font-sans min-h-screen bg-zinc-900">
+    <slot />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

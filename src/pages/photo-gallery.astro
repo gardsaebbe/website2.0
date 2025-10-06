@@ -1,0 +1,73 @@
+---
+import H1 from "../components/h1.astro";
+import InfoLayout from "../layouts/InfoLayout.astro";
+import Gallery from "../components/gallery";
+
+const images = [
+  {
+    src: "/1.jpg",
+    alt: "Bilde 1",
+    caption: "Hvitmalt Gjerde på Dragefjellet Minifestival 02.08.2025",
+  },
+  {
+    src: "l/8.jpg",
+    alt: "Bilde 8",
+    caption: "Superføkk på Dragefjellet Minifestival 02.08.2025",
+  },
+  {
+    src: "l/2.jpg",
+    alt: "Bilde 2",
+    caption: "Venner på Dragefjellet Minifestival 02.08.2025 :-)",
+  },
+  {
+    src: "l/3.jpg",
+    alt: "Bilde 3",
+    caption: "Bare Folk på Landmark 04.07.2025",
+  },
+  {
+    src: "l/4.jpg",
+    alt: "Bilde 4",
+    caption: "Orlando: ollie på fløen sommer 2025",
+  },
+  {
+    src: "l/5.jpg",
+    alt: "Bilde 5",
+    caption: "En dårlig parkert bil på Nordnes :O",
+  },
+  {
+    src: "l/9.jpg",
+    alt: "Bilde 9",
+    caption: "ASININ, Oslo, juni 2025",
+  },
+  {
+    src: "l/7.jpg",
+    alt: "Bilde 7",
+    caption: "Hvitmalt Gjerde på Rommet 19.09.2025",
+  },
+  {
+    src: "l/11.jpg",
+    alt: "Bilde 11",
+    caption: "Hvitmalt Gjerde på Rommet 19.09.2025",
+  },
+  {
+    src: "l/10.jpg",
+    alt: "Bilde 10",
+    caption: "Shament, København sommer 2025",
+  },
+  { src: "l/12.jpg", alt: "Bilde 12", caption: "Skate våren 2024" },
+  { src: "l/13.jpg", alt: "Bilde 13", caption: "Skate høsten 2024" },
+];
+---
+
+<InfoLayout>
+  <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-dvh">
+    <H1>Bildegalleri</H1>
+
+    <p class="mt-5 text-xl xl:text-2xl text-zinc-500 text-balance">
+      I sommer kjøpte jeg analog-kamera, som har resultert i en stor interesse
+      for foto. Her er noen bilder fra konserter og sosiale sammenkomster med
+      mine venner :)
+    </p>
+    <Gallery images={images} client:load />
+  </div>
+</InfoLayout>

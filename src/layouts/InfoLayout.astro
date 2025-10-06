@@ -1,0 +1,32 @@
+---
+import RootLayout from "./RootLayout.astro";
+import Footer from "../components/footer.astro";
+
+const { title, description } = Astro.props;
+
+const pathname = Astro.url.pathname;
+---
+
+<RootLayout title={title} description={description}>
+  <div class="flex relative gap-4 w-full max-w-screen-xl">
+    <nav
+      class="relative w-4 md:min-w-2xs xl:min-w-sm sm:min-h-screen sm:ml-4 sm:pb-4"
+    >
+      <div
+        class="w-full h-full max-sm:w-4 md:max-w-2xs xl:max-w-sm fixed -z-10 sm:bottom-4 overflow-hidden bg-cover bg-center brightness-90"
+        style="background-image: url('/website/me-background.jpg');"
+      >
+        <!-- Optional overlay -->
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/50"
+        >
+        </div>
+      </div>
+    </nav>
+
+    <main class="relative">
+      <slot />
+      <Footer />
+    </main>
+  </div>
+</RootLayout>

@@ -1,0 +1,58 @@
+---
+import H1 from "../components/h1.astro";
+import InfoLayout from "../layouts/InfoLayout.astro";
+import Gallery from "../components/gallery";
+---
+
+<InfoLayout>
+  <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-dvh">
+    <H1>Videogalleri</H1>
+
+    <p class="mt-5 text-xl xl:text-2xl text-zinc-500 text-balance">
+      Jeg har drevet med skateboard i 15 år, og har de siste årene gått over til
+      en mer aktiv rolle som filmer. Dette har gitt meg mulighter til å reise
+      rundt i Europa, og her er noe av det jeg har filmet for andre merker!
+    </p>
+
+    <!-- Videoen rett under teksten -->
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/GHlBB86FKd4?si=2NGcTKC_53jxlcJU"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/hku6k9_aADo?si=GhkN-G7yUAuv4XCJ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/J80v-nx4F38?si=Y2_3oknsvlu6H7Gs"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</InfoLayout>
