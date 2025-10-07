@@ -9,15 +9,7 @@ interface Props {
   onPrev: () => void;
 }
 
-export default function ImageModal({
-  src,
-  alt,
-  caption,
-  onClose,
-  onNext,
-  onPrev,
-}: Props) {
-  // Lytt til tastatur (Escape, piltaster)
+export default function ImageModal({ src, alt, caption, onClose, onNext, onPrev }: Props) {
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -29,7 +21,7 @@ export default function ImageModal({
   }, [onClose, onNext, onPrev]);
 
   return (
-    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black/90 flex flex-col items-center justify-center z-[9999] p-4">
       {/* Lukkeknapp */}
       <button
         onClick={onClose}
@@ -55,14 +47,14 @@ export default function ImageModal({
       </button>
 
       {/* Bildet + caption */}
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center max-w-[95vw]">
         <img
           src={src}
           alt={alt}
-          className="max-h-[80vh] max-w-[90vw] rounded-xl shadow-lg"
+          className="max-h-[80vh] w-auto rounded-xl shadow-lg"
         />
         {caption && (
-          <p className="mt-4 text-center text-zinc-200 text-lg max-w-[80vw]">
+          <p className="mt-4 text-center text-zinc-200 text-lg px-4 sm:px-8 lg:px-16">
             {caption}
           </p>
         )}

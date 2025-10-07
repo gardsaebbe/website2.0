@@ -21,7 +21,8 @@ export default function Gallery({ images }: Props) {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+      {/* Skjul navbar når modal er åpen */}
+      <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-6 ${index !== null ? "pointer-events-none opacity-30" : ""}`}>
         {images.map((img, i) => (
           <img
             key={i}

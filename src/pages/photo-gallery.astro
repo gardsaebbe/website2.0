@@ -64,22 +64,17 @@ const images = [
   description="Foto og bilder fra konserter, skate og venner"
   backgroundImage="/public/me-background.jpg"
 >
-  <div class="p-4 sm:pt-8 sm:px-8 lg:px-12 pb-24 min-h-dvh flex flex-col gap-6">
+  <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-dvh">
     <!-- Header -->
-    <div class="text-center sm:text-left">
-      <H1 className="text-2xl sm:text-4xl">Bildegalleri</H1>
-      <p
-        class="mt-4 sm:mt-6 text-base sm:text-lg xl:text-xl text-zinc-500 text-balance"
-      >
-        I sommer kjøpte jeg analog-kamera, som har resultert i en stor interesse
-        for foto. Her er noen bilder fra konserter og sosiale sammenkomster med
-        mine venner :)
-      </p>
-    </div>
+    <H1>Bildegalleri</H1>
 
-    <!-- Gallery -->
-    <div class="mt-8">
-      <Gallery images={images} client:only="react" />
-    </div>
+    <p class="mt-5 text-xl xl:text-2xl text-zinc-500 text-balance">
+      I sommer kjøpte jeg analog-kamera, som har resultert i en stor interesse
+      for foto. Her er noen bilder fra konserter og sosiale sammenkomster med
+      mine venner :)
+    </p>
+
+    <!-- Gallery: bruk kun én gang -->
+    <Gallery images={images} client:only="react" />
   </div>
 </InfoLayout>
