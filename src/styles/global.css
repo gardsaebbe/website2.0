@@ -1,7 +1,7 @@
 @import "tailwindcss";
 /* Egendefinert font */
 :root {
-  --font-sans: "Comic Sans MS", "Comic Sans", cursive;
+  --font-mono: cursive;
 }
 
 /* Ekstra global styling (valgfritt) */
