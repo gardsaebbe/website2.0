@@ -3,13 +3,60 @@ import Link from "../components/link.astro";
 const pathname = Astro.url.pathname;
 ---
 
-<footer class="fixed bottom-0 left-0 w-full bg-zinc-900 py-4 rounded-t-3xl">
-  <div class="px-4 sm:px-12 flex items-center justify-between">
-    <!-- Logo / tekst -->
-    <span class="text-white font-bold">Meny</span>
+<footer class="py-4">
+  <div
+    x-data="{ open: false }"
+    class="bg-zinc-900 px-6 py-3 rounded-t-3xl inline-block fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50"
+  >
+    <!-- Desktop og mobil navbar -->
+    <div class="flex items-center gap-6">
+      <!-- Desktop links -->
+      <div class="hidden sm:flex items-center gap-6">
+        <Link href="/website2.0/" variant="secondary">Hjem</Link>
+        <Link href="/website2.0/about" variant="secondary">CV</Link>
+        <Link href="/website2.0/photo-gallery" variant="secondary"
+          >Fotogalleri</Link
+        >
+        <Link href="/website2.0/video-gallery" variant="secondary"
+          >Videogalleri</Link
+        >
+      </div>
 
-    <!-- Desktop links -->
-    <div class="hidden sm:flex items-center gap-6">
+      <!-- Burger knapp for mobil -->
+      <button @click="open = !open" class="sm:hidden text-white">
+        <svg
+          x-show="!open"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-7 w-7"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          x-show="open"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-7 w-7"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobilmeny -->
+    <div x-show="open" class="sm:hidden flex flex-col gap-4 mt-3">
       <Link href="/website2.0/" variant="secondary">Hjem</Link>
       <Link href="/website2.0/about" variant="secondary">CV</Link>
       <Link href="/website2.0/photo-gallery" variant="secondary"
@@ -19,63 +66,8 @@ const pathname = Astro.url.pathname;
         >Videogalleri</Link
       >
     </div>
-
-    <!-- Burger knapp for mobil -->
-    <button id="burger" class="sm:hidden text-white">
-      <svg
-        id="burger-open"
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-7 w-7"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-      <svg
-        id="burger-close"
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-7 w-7 hidden"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Mobilmeny -->
-  <div id="mobileMenu" class="hidden flex-col gap-4 mt-4 px-4 sm:hidden">
-    <Link href="/website2.0/" variant="secondary">Hjem</Link>
-    <Link href="/website2.0/about" variant="secondary">CV</Link>
-    <Link href="/website2.0/photo-gallery" variant="secondary">Fotogalleri</Link
-    >
-    <Link href="/website2.0/video-gallery" variant="secondary"
-      >Videogalleri</Link
-    >
   </div>
 </footer>
 
-<script>
-  const burger = document.getElementById("burger");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const burgerOpen = document.getElementById("burger-open");
-  const burgerClose = document.getElementById("burger-close");
-
-  if (burger && mobileMenu && burgerOpen && burgerClose) {
-    burger.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      burgerOpen.classList.toggle("hidden");
-      burgerClose.classList.toggle("hidden");
-    });
-  }
-</script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer
+></script>

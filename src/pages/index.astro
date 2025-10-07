@@ -59,16 +59,11 @@ import RootLayout from "../layouts/RootLayout.astro";
           </h3>
         </div>
 
-        <!-- NAVBAR -->
         <div
           x-data="{ open: false }"
-          class="bg-zinc-900 px-4 py-2 rounded-3xl w-full max-w-sm"
+          class="bg-zinc-900 px-4 py-2 rounded-3xl inline-flex mx-auto"
         >
-          <div class="flex items-center justify-between">
-            <!-- logo / navn -->
-            <span class="text-white font-bold">Meny</span>
-
-            <!-- desktop links -->
+          <div class="flex items-center justify-between gap-6">
             <div class="hidden sm:flex gap-6">
               <Link href="/website2.0/about" variant="secondary">CV</Link>
               <Link href="/website2.0/photo-gallery" variant="secondary"
