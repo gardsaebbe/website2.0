@@ -9,6 +9,7 @@ import RootLayout from "../layouts/RootLayout.astro";
     <div
       class="group relative w-full min-h-dvh flex items-center justify-center"
     >
+      <!-- bakgrunn -->
       <div class="absolute w-full h-dvh -z-10 flex flex-col">
         <img
           src="/website2.0/background.svg"
@@ -40,25 +41,35 @@ import RootLayout from "../layouts/RootLayout.astro";
       <div
         class="p-4 sm:p-8 absolute w-full h-dvh flex flex-col items-center justify-center z-10"
       >
+        <!-- navn -->
         <div class="flex items-center gap-4 mb-4">
           <H1>Gard Sæbbe</H1>
         </div>
 
+        <!-- bilde -->
         <div class="mb-6">
           <img src="/website2.0/me.jpg" alt="pic_of_me" class="w-62" />
         </div>
 
+        <!-- tekst -->
         <div class="flex items-center gap-4 mb-6">
           <h3 class="text-white text-center">
             Jeg er en kreativ og lærelysten 25-åring fra Bergen med interessere
-            for for programmering, musikk, aktivitet, kultur og nye
-            utfordringer.
+            for programmering, musikk, aktivitet, kultur og nye utfordringer.
           </h3>
         </div>
 
-        <div class="bg-zinc-900 py-2 px-2 rounded-3xl flex items-center">
+        <!-- NAVBAR -->
+        <div
+          x-data="{ open: false }"
+          class="bg-zinc-900 px-4 py-2 rounded-3xl w-full max-w-sm"
+        >
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-4">
+            <!-- logo / navn -->
+            <span class="text-white font-bold">Meny</span>
+
+            <!-- desktop links -->
+            <div class="hidden sm:flex gap-6">
               <Link href="/website2.0/about" variant="secondary">CV</Link>
               <Link href="/website2.0/photo-gallery" variant="secondary"
                 >Fotogalleri</Link
@@ -67,9 +78,55 @@ import RootLayout from "../layouts/RootLayout.astro";
                 >Videogalleri</Link
               >
             </div>
+
+            <!-- burger knapp -->
+            <button @click="open = !open" class="sm:hidden text-white">
+              <svg
+                x-show="!open"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <svg
+                x-show="open"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- mobil meny -->
+          <div x-show="open" class="sm:hidden flex flex-col gap-4 mt-4">
+            <Link href="/website2.0/about" variant="secondary">CV</Link>
+            <Link href="/website2.0/photo-gallery" variant="secondary"
+              >Fotogalleri</Link
+            >
+            <Link href="/website2.0/video-gallery" variant="secondary"
+              >Videogalleri</Link
+            >
           </div>
         </div>
       </div>
     </div>
   </main>
 </RootLayout>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer
+></script>

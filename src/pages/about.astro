@@ -8,27 +8,30 @@ import InfoLayout from "../layouts/InfoLayout.astro";
   description="Curriculum Vitae for Gard Sæbbe"
   backgroundImage="/public/me-background.jpg"
 >
-  <div
-    class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-dvh flex flex-col justify-between gap-4"
-  >
-    <div class="space-y-4 sm:space-y-12">
-      <H1>Gard Epland Sæbbe</H1>
-      <p class="text-xl xl:text-2xl text-zinc-500 text-balance">
-        Bergen, Norge | +47 925 77 613 | g.saebbe@hotmail.com |
+  <div class="p-4 sm:pt-8 sm:px-8 lg:px-12 pb-24 min-h-dvh flex flex-col gap-6">
+    <!-- Header / navn + kontakt -->
+    <div class="space-y-4 sm:space-y-10 text-center sm:text-left">
+      <H1 className="text-2xl sm:text-4xl">Gard Epland Sæbbe</H1>
+      <p class="text-base sm:text-lg xl:text-xl text-zinc-500 text-balance">
+        Bergen, Norge <br class="sm:hidden" />
+        +47 925 77 613 <br class="sm:hidden" />
+        g.saebbe@hotmail.com <br class="sm:hidden" />
         <a href="https://github.com/gardsaebbe" class="underline text-zinc-400"
           >GitHub</a
         >
       </p>
     </div>
 
-    <div class="space-y-8 text-base sm:text-lg">
+    <!-- CV innhold -->
+    <div class="space-y-10 text-sm sm:text-base lg:text-lg">
+      <!-- Utdanning -->
       <section>
         <h2
           class="px-4 text-zinc-400 underline underline-offset-4 decoration-zinc-500"
         >
           Utdanning
         </h2>
-        <ul class="px-4 text-zinc-400 list-disc list-outside">
+        <ul class="px-4 text-zinc-400 list-disc list-outside space-y-2">
           <li>
             UiB / Informatikk-matematikk-økonomi bachelor (august 2024 - juni
             2026) – Programmering, Statistikk, Økonomi
@@ -45,13 +48,14 @@ import InfoLayout from "../layouts/InfoLayout.astro";
         </ul>
       </section>
 
+      <!-- Arbeidserfaring -->
       <section>
         <h2
           class="px-4 text-zinc-400 underline underline-offset-4 decoration-zinc-500"
         >
           Arbeidserfaring
         </h2>
-        <ul class="px-4 text-zinc-400 list-disc list-outside">
+        <ul class="px-4 text-zinc-400 list-disc list-outside space-y-2">
           <li>Assistent i bofellesskap / Bergen kommune (juni 2025 - d.d.)</li>
           <li>Ferievikar assistent / Helse Bergen (juni - august 2024)</li>
           <li>
@@ -68,26 +72,28 @@ import InfoLayout from "../layouts/InfoLayout.astro";
         </ul>
       </section>
 
+      <!-- Kurs og sertifikater -->
       <section>
         <h2
           class="px-4 text-zinc-400 underline underline-offset-4 decoration-zinc-500"
         >
           Kurs og sertifikater
         </h2>
-        <ul class="px-4 text-zinc-400 list-disc list-outside">
+        <ul class="px-4 text-zinc-400 list-disc list-outside space-y-2">
           <li>Lagførerkurs / Forsvaret (juli 2020)</li>
           <li>Førstehjelpskurs / Forsvaret (februar 2020)</li>
           <li>Førerkort klasse B (desember 2018)</li>
         </ul>
       </section>
 
+      <!-- Annet arbeid & hobby -->
       <section>
         <h2
           class="px-4 text-zinc-400 underline underline-offset-4 decoration-zinc-500"
         >
           Annet arbeid & hobby
         </h2>
-        <ul class="px-4 text-zinc-400 list-disc list-outside">
+        <ul class="px-4 text-zinc-400 list-disc list-outside space-y-2">
           <li>
             Frilans film & musikkbooking (2024 - d.d.) – Arrangerer konserter i
             Bergen og driver videoproduksjon og andre oppdrag gjennom
@@ -104,13 +110,14 @@ import InfoLayout from "../layouts/InfoLayout.astro";
         </ul>
       </section>
 
+      <!-- Ferdigheter & interesser -->
       <section>
         <h2
           class="px-4 text-zinc-400 underline underline-offset-4 decoration-zinc-500"
         >
           Ferdigheter & interesser
         </h2>
-        <ul class="px-4 text-zinc-400 list-disc list-outside">
+        <ul class="px-4 text-zinc-400 list-disc list-outside space-y-2">
           <li>Språk: Engelsk (flytende), Norsk (morsmål)</li>
           <li>
             Programmering: Python, HTML, CSS, JavaScript, TypeScript, SQL, Java,
@@ -126,13 +133,14 @@ import InfoLayout from "../layouts/InfoLayout.astro";
         </ul>
       </section>
 
+      <!-- Referanser -->
       <section>
         <h2
           class="px-4 text-zinc-400 underline underline-offset-4 decoration-zinc-500"
         >
           Referanser
         </h2>
-        <ul class="px-4 text-zinc-400 list-disc list-outside">
+        <ul class="px-4 text-zinc-400 list-disc list-outside space-y-2">
           <li>
             Audun Selsvold – Leder Bispengsgaten 21 Bofellesskap, E-post:
             audun.selsvold@bergen.kommune.no, Tlf: 408 14 767

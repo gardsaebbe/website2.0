@@ -1,5 +1,4 @@
 ---
-// InfoPage.astro
 import H1 from "../components/h1.astro";
 import InfoLayout from "../layouts/InfoLayout.astro";
 import Gallery from "../components/gallery";
@@ -60,17 +59,27 @@ const images = [
 ];
 ---
 
-<InfoLayout>
-  <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-dvh">
-    <H1>Bildegalleri</H1>
+<InfoLayout
+  title="Gard Sæbbe – Bildegalleri"
+  description="Foto og bilder fra konserter, skate og venner"
+  backgroundImage="/public/me-background.jpg"
+>
+  <div class="p-4 sm:pt-8 sm:px-8 lg:px-12 pb-24 min-h-dvh flex flex-col gap-6">
+    <!-- Header -->
+    <div class="text-center sm:text-left">
+      <H1 className="text-2xl sm:text-4xl">Bildegalleri</H1>
+      <p
+        class="mt-4 sm:mt-6 text-base sm:text-lg xl:text-xl text-zinc-500 text-balance"
+      >
+        I sommer kjøpte jeg analog-kamera, som har resultert i en stor interesse
+        for foto. Her er noen bilder fra konserter og sosiale sammenkomster med
+        mine venner :)
+      </p>
+    </div>
 
-    <p class="mt-5 text-xl xl:text-2xl text-zinc-500 text-balance">
-      I sommer kjøpte jeg analog-kamera, som har resultert i en stor interesse
-      for foto. Her er noen bilder fra konserter og sosiale sammenkomster med
-      mine venner :)
-    </p>
-
-    <!-- Viktig: bruker client:only for å unngå duplikat -->
-    <Gallery images={images} client:only="react" />
+    <!-- Gallery -->
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <Gallery images={images} client:only="react" />
+    </div>
   </div>
 </InfoLayout>
